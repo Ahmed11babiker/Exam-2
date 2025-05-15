@@ -1,0 +1,430 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color:black;
+    color: white;
+}
+
+body.loading {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+
+
+
+/* Sidebar */
+#sidebarMenu {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    background-color:rgba(5, 20, 115, 0.742) !important;
+    padding-top: 60px;
+    z-index: 1000;
+    transition: left 0.4s ease;
+}
+
+#sidebarMenu.open {
+    left: 0;
+}
+
+.nav-link-item {
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-decoration: none !important;
+    
+}
+
+
+
+
+/* Menu Icon */
+.menu-icon {
+    position: fixed;
+    top: 50%;
+    left: 40px;
+    font-size: 50px;
+    cursor: pointer;
+    z-index: 1100;
+    transition: left 0.4s ease;
+    color: #ffffff;
+    
+    
+}
+
+
+
+.menu-icon.move-right {
+    left: 270px;
+}
+
+/* Main Content */
+#mainContent {
+    padding: 80px 30px;
+}
+
+
+
+
+
+
+/* تنسيق الصورة على اليسار مع النصوص على اليمين */
+.meal-detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.meal-detail-container img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.meal-detail-container .meal-info {
+  margin-left: 30px;
+  flex: 1;
+}
+
+.meal-detail-container .meal-info h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.meal-detail-container .meal-info h5 {
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+.meal-detail-container .meal-info ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.meal-detail-container .meal-info ul li {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* أزرار للمصادر والفيديو */
+/* .btn-danger, .btn-info {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+} */
+
+/* عرض العناصر بشكل متجاوب على الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .meal-detail-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .meal-detail-container .meal-info {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+
+/* تأثيرات على الأزرار */
+.btn-danger, .btn-info {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-danger:hover, .btn-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* تأثير على الصورة */
+img.img-fluid {
+  transition: transform 0.3s ease;
+}
+
+img.img-fluid:hover {
+  transform: scale(1.05);
+}
+
+/* تأثيرات النصوص */
+h3:hover, h5:hover, h6:hover {
+  color: #ff6347; /* لون مميز عند التمرير */
+  transition: color 0.3s ease;
+}
+
+/* تأثير للـ Card عند التمرير */
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* تأثيرات التمرير على الروابط */
+a:hover {
+  text-decoration: underline;
+  color: #eeeeee;
+}
+
+
+
+
+
+
+
+/* تنسيق البطاقة الخاصة بالمنطقة */
+.card.area-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.area-card:hover {
+  transform: scale(1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق الوجبات التي تظهر عند اختيار المنطقة */
+.card.meal-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.meal-card:hover {
+  transform: scale(1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* تأثيرات الأزرار */
+.btn-danger, .btn-info {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-danger:hover, .btn-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* تأثيرات التمرير */
+.card img {
+  transition: transform 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+
+/* عرض العناصر بشكل متجاوب */
+@media (max-width: 768px) {
+  .card-area {
+    text-align: center;
+  }
+
+  .meal-card, .area-card {
+    text-align: center;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  /* تعديل التنسيق عندما يكون العرض أقل من 768px */
+  .meal-detail-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .meal-detail-container .meal-info {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .meal-detail-container .meal-info ul {
+    padding-left: 0;
+  }
+
+  /* توسيط الأزرار */
+  .meal-detail-container .meal-info .d-flex {
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  /* جعل الصور أصغر قليلاً */
+  .meal-detail-container img {
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* صورة الوجبة */
+img.img-fluid {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+img.img-fluid:hover {
+  transform: scale(1.03);
+}
+
+/* الشارات */
+.badge {
+  font-size: 0.9rem;
+  border-radius: 10px;
+}
+
+/* الزرار */
+.btn-outline-primary,
+.btn-outline-danger {
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-danger:hover {
+  transform: scale(1.05);
+}
+
+/* عرض عناصر اليمين بشكل أنيق */
+@media (max-width: 768px) {
+  .row.align-items-start {
+    flex-direction: column;
+  }
+
+  .col-md-4,
+  .col-md-8 {
+    text-align: center;
+  }
+
+  .list-unstyled.d-flex {
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+
+.ingredient-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.ingredient-card:hover {
+  background-color: #e9ffe9;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+
+
+/* contact */
+
+
+input.form-control {
+  border-radius: 10px;
+  padding: 10px 15px;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+}
+
+input.form-control:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+
+
+/*  */
+
+/* لإخفاء العناصر داخل القائمة أولًا */
+/* Basic sidebar styling */
+
+
+
+
+
+
+
+
+
+/* overly */
+
+.meal-card {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.meal-card img {
+  transition: transform 0.4s ease;
+}
+
+.meal-card:hover img {
+  transform: scale(1.05);
+}
+
+.meal-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(187, 179, 179, 0.6);
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.meal-card:hover .meal-overlay {
+  transform: translateY(0);
+}
+
+
+  
+
+
+
+
+.nav-footer{
+ margin-top: 15rem !important;
+}
+
+
+
+
+
+/* #loadingSpinnerr {
+  
+} */
+
